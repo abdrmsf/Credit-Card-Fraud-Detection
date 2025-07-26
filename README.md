@@ -1,98 +1,123 @@
-# Credit Card Fraud Detection
+# 💳 Credit Card Fraud Detection
 
-## Project Overview
+This project focuses on detecting fraudulent credit card transactions using machine learning techniques. It leverages data preprocessing, anomaly detection (Isolation Forest), supervised learning (XGBoost), and class imbalance handling (SMOTE). A Streamlit web app is included for both manual and batch predictions.
 
-This project focuses on detecting fraudulent credit card transactions using machine learning techniques. It leverages data preprocessing, anomaly detection (Isolation Forest), supervised learning with XGBoost, and oversampling (SMOTE) to handle class imbalance. The model is wrapped in a user-friendly Streamlit web app that allows batch or manual entry transaction predictions.
+---
 
-## Dataset
+## 📂 Dataset
 
-- The dataset used is the [Credit Card Fraud Detection Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) from Kaggle.
-- Contains anonymized transactions made by European cardholders over two days in 2013.
-- Imbalanced dataset with a small fraction of fraud transactions.
-- Features include 28 PCA principal components, `Time`, `Amount`, and target variable `Class` (0 = non-fraud, 1 = fraud).
+- **Source**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+- **Description**: Transactions made by European cardholders over two days in 2013.
+- **Features**:
+  - 28 anonymized PCA features (`V1` to `V28`)
+  - `Time`, `Amount`
+  - `Class` (Target: `0` = Non-Fraud, `1` = Fraud)
+- **Note**: The dataset is highly imbalanced with a small number of fraud cases.
 
-## Key Features
+---
 
-- Data cleaning and feature scaling (StandardScaler).
-- Class balancing using SMOTE oversampling.
-- Unsupervised anomaly detection via Isolation Forest.
-- Supervised classification with XGBoost.
-- Performance evaluation using confusion matrix, classification report, ROC curve, and AUC.
-- Deployment as an interactive Streamlit app enabling:
-  - CSV upload for batch prediction.
-  - Manual transaction input.
+## 🚀 Features
 
-## Project Structure
+- ✅ Data cleaning and scaling (`StandardScaler`)
+- ✅ Class balancing using **SMOTE**
+- ✅ Anomaly detection using **Isolation Forest**
+- ✅ Supervised classification with **XGBoost**
+- ✅ Model evaluation with:
+  - Confusion Matrix
+  - Classification Report
+  - ROC Curve and AUC
+- ✅ Streamlit web app for:
+  - Manual input-based fraud prediction
+  - Batch prediction via CSV upload
 
-├── app.py # Streamlit web app for prediction and UI
-├── creditcard.csv # Kaggle dataset (not included due to size)
-├── xgb_fraud_model.pkl # Serialized trained XGBoost model
-├── amount_time_scaler.pkl # Serialized scaler for 'Time' and 'Amount'
-├── notebook.ipynb # Jupyter notebook containing EDA, modeling, and evaluation
-├── requirements.txt # Dependencies to install Python packages
-└── README.md # This file
+---
 
-text
+## 🏗️ Project Structure
 
-## Installation & Setup
+```
+├── app.py                    # Streamlit app interface
+├── creditcard.csv           # Kaggle dataset (not included)
+├── xgb_fraud_model.pkl      # Trained XGBoost model (pickle)
+├── amount_time_scaler.pkl   # Scaler for 'Time' and 'Amount'
+├── notebook.ipynb           # Full EDA, training, and evaluation
+├── requirements.txt         # Python dependencies
+└── README.md                # Project documentation
+```
 
-1. Clone this repository:
-git clone https://github.com/yourusername/credit-card-fraud-detection.git
-cd credit-card-fraud-detection
+---
 
-text
+## 🛠️ Installation & Setup
 
-2. Install dependencies:
-pip install -r requirements.txt
+1. **Clone the repository**
 
-text
+   ```bash
+   git clone https://github.com/yourusername/credit-card-fraud-detection.git
+   cd credit-card-fraud-detection
+   ```
 
-3. Download the dataset from Kaggle and place `creditcard.csv` inside the project folder (optional if using pre-trained model only).
+2. **Install required packages**
 
-4. (Optional) Explore and retrain models through `notebook.ipynb`.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Running the Streamlit App
+3. **Download the dataset**\
+   Download `creditcard.csv` from Kaggle and place it in the root project directory. *(Optional if using pre-trained model)*
 
-Launch the web app locally with the following command:
+4. **(Optional)** Open `notebook.ipynb` to explore or retrain the model.
 
+---
+
+## 💻 Running the Streamlit App
+
+To launch the app locally:
+
+```bash
 streamlit run app.py
+```
 
-text
+Then, open your browser and go to: [http://localhost:8501](http://localhost:8501)
 
-The app allows you to:
+### ✅ App Features
 
-- Upload a CSV file with credit card transactions for batch fraud prediction.
-- Manually input transaction features to get real-time fraud predictions.
+- Upload a CSV file for **batch fraud detection**
+- Enter transaction details manually for **real-time predictions**
 
-Access the app in your browser at `http://localhost:8501`.
+---
 
-## Sample Input for Manual Prediction
+## ✍️ Sample Manual Input
 
 | Feature | Example Value |
-|---------|---------------|
+| ------- | ------------- |
 | Time    | 50000         |
 | V1      | -1.25         |
 | V2      | 2.35          |
 | ...     | ...           |
 | Amount  | 150.75        |
 
-(The app internally scales 'Time' and 'Amount' before prediction.)
-
-For batch prediction, you can use the included `sample_transactions.csv` with the correct column format.
-
-## Future Improvements
-
-- Hyperparameter tuning for improved accuracy.
-- Addition of alternative supervised and unsupervised algorithms.
-- Enhanced interpretability and visualization features.
-- Cloud deployment with continuous monitoring and alerts.
-- Real-time integration with transactional systems.
-
-## License
-
-This project is for educational and demonstration purposes only. Dataset usage is subject to Kaggle's terms and conditions.
+> ⚠️ 'Time' and 'Amount' are automatically scaled before prediction.
 
 ---
 
-*Feel free to customize this README further with screenshots, badges, or contributor info.*  
-If you need help generating a `requirements.txt` or other documentation files, let me know!
+## 📈 Future Enhancements
+
+-
+
+---
+
+## 📄 License
+
+This project is intended for **educational and demonstration purposes** only.\
+Dataset usage is governed by [Kaggle’s Terms of Service](https://www.kaggle.com/terms).
+
+---
+
+## 🙋‍♂️ Contributing
+
+Feel free to open issues or submit pull requests!\
+You can also customize this README with badges, contributor lists, or app screenshots.
+
+---
+
+*Made with ❤️ for fraud detection enthusiasts.*
+
