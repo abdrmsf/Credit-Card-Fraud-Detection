@@ -6,29 +6,32 @@ This project focuses on detecting fraudulent credit card transactions using mach
 
 ## 📂 Dataset
 
-- **Source**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
-- **Description**: Transactions made by European cardholders over two days in 2013.
-- **Features**:
-  - 28 anonymized PCA features (`V1` to `V28`)
-  - `Time`, `Amount`
-  - `Class` (Target: `0` = Non-Fraud, `1` = Fraud)
-- **Note**: The dataset is highly imbalanced with a small number of fraud cases.
+* **Source**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+* **Description**: Transactions made by European cardholders over two days in 2013.
+* **Features**:
+
+  * 28 anonymized PCA features (`V1` to `V28`)
+  * `Time`, `Amount`
+  * `Class` (Target: `0` = Non-Fraud, `1` = Fraud)
+* **Note**: The dataset is highly imbalanced with a small number of fraud cases.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Data cleaning and scaling (`StandardScaler`)
-- ✅ Class balancing using **SMOTE**
-- ✅ Anomaly detection using **Isolation Forest**
-- ✅ Supervised classification with **XGBoost**
-- ✅ Model evaluation with:
-  - Confusion Matrix
-  - Classification Report
-  - ROC Curve and AUC
-- ✅ Streamlit web app for:
-  - Manual input-based fraud prediction
-  - Batch prediction via CSV upload
+* ✅ Data cleaning and scaling (`StandardScaler`)
+* ✅ Class balancing using **SMOTE**
+* ✅ Anomaly detection using **Isolation Forest**
+* ✅ Supervised classification with **XGBoost**
+* ✅ Model evaluation with:
+
+  * Confusion Matrix
+  * Classification Report
+  * ROC Curve and AUC
+* ✅ Streamlit web app for:
+
+  * Manual input-based fraud prediction
+  * Batch prediction via CSV upload
 
 ---
 
@@ -61,8 +64,8 @@ This project focuses on detecting fraudulent credit card transactions using mach
    pip install -r requirements.txt
    ```
 
-3. **Download the dataset**\
-   Download `creditcard.csv` from Kaggle and place it in the root project directory. *(Optional if using pre-trained model)*
+3. **Download the dataset** &#x20;
+   Download `creditcard.csv` from Kaggle and place it in the root project directory. *(Optional if using pre-trained model only for prediction)*
 
 4. **(Optional)** Open `notebook.ipynb` to explore or retrain the model.
 
@@ -80,8 +83,17 @@ Then, open your browser and go to: [http://localhost:8501](http://localhost:8501
 
 ### ✅ App Features
 
-- Upload a CSV file for **batch fraud detection**
-- Enter transaction details manually for **real-time predictions**
+* Upload a CSV file for **batch fraud detection**
+* Enter transaction details manually for **real-time predictions**
+
+---
+
+## 🔗 Live Demo
+
+You can access the deployed app here:
+👉 [https://credit-card-fraud-detection-zzaxdcvpczckq5bj6odyof.streamlit.app/](https://credit-card-fraud-detection-zzaxdcvpczckq5bj6odyof.streamlit.app/)
+
+> Replace this link with the actual URL of your deployed app.
 
 ---
 
@@ -101,23 +113,27 @@ Then, open your browser and go to: [http://localhost:8501](http://localhost:8501
 
 ## 📈 Future Enhancements
 
--
+* [ ] Hyperparameter optimization
+* [ ] Add more ML models (Random Forest, LightGBM, etc.)
+* [ ] Model interpretability (SHAP, LIME)
+* [ ] Cloud deployment (AWS/GCP/Azure)
+* [ ] Real-time fraud detection pipeline
+* [ ] Email/SMS alerts for flagged transactions
 
 ---
 
 ## 📄 License
 
-This project is intended for **educational and demonstration purposes** only.\
+This project is intended for **educational and demonstration purposes** only.
 Dataset usage is governed by [Kaggle’s Terms of Service](https://www.kaggle.com/terms).
 
 ---
 
 ## 🙋‍♂️ Contributing
 
-Feel free to open issues or submit pull requests!\
+Feel free to open issues or submit pull requests!
 You can also customize this README with badges, contributor lists, or app screenshots.
 
 ---
 
 *Made with ❤️ for fraud detection enthusiasts.*
-
